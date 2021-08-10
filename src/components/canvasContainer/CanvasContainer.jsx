@@ -19,7 +19,6 @@ const CanvasContainer = () => {
     }, [])
 
     return (
-        // TODO: fix the width and height of the canvas without making the canvas blurry
         <canvas ref={canvasRef} className="canvas" width='100%' height='100%'></canvas>
     )
 }

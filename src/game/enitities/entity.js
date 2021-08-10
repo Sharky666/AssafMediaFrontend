@@ -1,12 +1,9 @@
 class Entity {
+    // TODO: implement a feature that simply gives you the center of the entity when asking for it's location
     constructor(img, location) {
         this.img = this.prepareGraphics(img);
         this.location = location;
         window.playerPos = location;
-        this.destination = {
-            x: 1500,
-            y: 1000
-        }
     }
 
     stepToDestination() {

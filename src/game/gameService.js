@@ -1,4 +1,6 @@
-import Pirate from './enitities/pirate';
+import Pirate from './enitities/items/pirate';
+import PirateIsland from './enitities/items/pirateIsland';
+import Sea from './enitities/items/sea';
 import Player from './player';
 
 const entities = [];
@@ -6,19 +8,18 @@ let windowCtx = null;
 let worldCtx = null;
 let worldCanvas = null;
 const worldDimensions = {
-    width: 2500,
-    height: 2500,
+    width: 3239,
+    height: 2179,
 };
 const player = new Player(new Pirate({
-    x: 25,
-    y: 25
+    x: 250,
+    y: 250
 }));
 const GameService = {
     initializeGame: function(windowCtx) {
         setWindowCtx(windowCtx);
         this.initializeWorldCtx();
         initializeEntities();
-        //TODO: make it faster
         window.requestAnimationFrame(animationFrameCallback);
     },
 
@@ -66,6 +67,14 @@ function animationFrameCallback() {
 };
 
 function initializeEntities() {
+    entities.push(new Sea({
+        x: 0,
+        y: 0
+    }));
+    entities.push(new PirateIsland({
+        x: 250,
+        y: 250
+    }));
     entities.push(player.entity);
 };
 
