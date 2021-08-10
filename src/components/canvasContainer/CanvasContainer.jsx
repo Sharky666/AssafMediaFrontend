@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import GameService from '../../services/gameService';
+import GameService from '../../game/gameService';
 import './canvasContainer.css';
 
 const CanvasContainer = () => {
