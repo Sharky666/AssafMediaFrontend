@@ -1,9 +1,13 @@
 import Entity from "../entity";
-import dragon from "../../assets/03-island.png";
+import dragon from "../../assets/images/03-island.png";
 
 class Dragon extends Entity {
     constructor(location) {
-        super(dragon, location);
+        const size = {
+            width: 490,
+            height: 320
+        }
+        super(dragon, location, size);
     };
 }
 

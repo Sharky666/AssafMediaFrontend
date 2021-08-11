@@ -1,9 +1,13 @@
 import Entity from "../entity";
-import tressureIsland from "../../assets/04-island.png";
+import tressureIsland from "../../assets/images/04-island.png";
 
 class TressureIsland extends Entity {
     constructor(location) {
-        super(tressureIsland, location);
+        const size = {
+            width: 650,
+            height: 580
+        }
+        super(tressureIsland, location, size);
     }
 }
 

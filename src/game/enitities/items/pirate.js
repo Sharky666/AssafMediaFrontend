@@ -1,9 +1,13 @@
 import Entity from '../entity';
-import pirate from '../../assets/pirate.png';
+import pirate from '../../assets/images/pirate.png';
 
 class Pirate extends Entity {
     constructor(location) {
-        super(pirate, location);
+        const size = {
+            width: 180,
+            height: 270
+        }
+        super(pirate, location, size);
     }
 }
 

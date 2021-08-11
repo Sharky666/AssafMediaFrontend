@@ -1,5 +1,6 @@
 import Pirate from './enitities/items/pirate';
 import PirateIsland from './enitities/items/pirateIsland';
+import RumIsland from './enitities/items/rumIsland';
 import Sea from './enitities/items/sea';
 import Player from './player';
 
@@ -75,6 +76,10 @@ function initializeEntities() {
         x: 250,
         y: 250
     }));
+    entities.push(new RumIsland ({
+        x: 250,
+        y: 900
+    }))
     entities.push(player.entity);
 };
 

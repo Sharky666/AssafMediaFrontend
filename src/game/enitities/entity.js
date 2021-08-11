@@ -1,9 +1,16 @@
+import { Observable } from 'rxjs';
+
 class Entity {
-    // TODO: implement a feature that simply gives you the center of the entity when asking for it's location
-    constructor(img, location) {
+    location = {
+        x: 0,
+        y: 0
+    }
+    // TODO: should it be an obserable? try and not waste too much time on it.
+    arrivedAtDestination$ = new Observable();
+    constructor(img, _location, _size) {
         this.img = this.prepareGraphics(img);
-        this.location = location;
-        window.playerPos = location;
+        this.size = _size;
+        this.setLocation(_location);
     }
 
     stepToDestination() {
@@ -49,6 +56,12 @@ class Entity {
 
     getLocation() {
         return this.location;
+    }
+
+    setLocation(_location) {
+        // makes the center of the entity it's location
+        this.location.x = _location.x - (this.size.width / 2);
+        this.location.y = _location.y - (this.size.height / 2);
     }
 }
 
