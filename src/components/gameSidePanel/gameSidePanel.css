@@ -1,7 +1,7 @@
 .gameSidePanel {
     position: absolute;
-    background-color: rgba(255, 0, 242, 0.3);
-    width: 12%;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 17%;
     height: 100%;
     right: 0;
 }

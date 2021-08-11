@@ -1,10 +1,11 @@
 export default class Player {
     constructor(entity) {
         this._entity = entity;
+        window.playEntity = this._entity;
     }
 
-    setDestination(location) {
-        this._entity.destination = location;
+    setDestinationEntity(destinationEntity) {
+        this._entity.setDestinationEntity(destinationEntity);
     }
 
     get entity() {

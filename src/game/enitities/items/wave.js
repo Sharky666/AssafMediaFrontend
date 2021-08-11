@@ -10,3 +10,5 @@ export class Wave extends Entity {
         super(wave, location, size);
     }
 }
+
+export default Wave;
