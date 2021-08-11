@@ -19,6 +19,7 @@ const sound = new Howl({
             <GameSidePanel/>
         </div>
     )
+
 }
 
 export default GameContainer;

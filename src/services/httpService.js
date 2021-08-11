@@ -1,7 +1,25 @@
-const httpService = {
-    get: async function(url) {},
+import axios from "axios";
 
-    post: async function(url) {}
+const httpService = {
+    get: async function(url) {
+        return axios.get(url).then( value => {
+            return value;
+        })
+        .catch(err => {
+            console.log(err);
+            throw err;
+        });
+    },
+
+    post: async function(url, data) {
+        return axios.post(url, data).then( value => {
+            return value;
+        })
+        .catch(err => {
+            console.log(err);
+            throw err;
+        });
+    }
 };
 
 export default httpService;
