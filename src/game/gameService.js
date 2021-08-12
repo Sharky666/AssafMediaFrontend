@@ -34,8 +34,8 @@ const GameService = {
         setWindowCtx(windowCtx);
         initializeWorldCtx();
         initializeEntities();
+        setPlayerLastLocation();
         window.requestAnimationFrame(animationFrameCallback);
-        player.setDestinationEntity(entitiesMap[3]);
     },
 
     getWorldCameraLocation: function() {
@@ -47,9 +47,12 @@ const GameService = {
     },
 
     rollDice: function(){
-        httpService.get(rollDiceUrl).then(diceRoll => {
+        httpService.post(rollDiceUrl, {}).then(diceRoll => {
             console.log(diceRoll);
-            player.entity.setDestinationEntity(entitiesMap[diceRoll]);
+            player.entity.setDestinationEntity(entitiesMap[diceRoll.data.number]);
+        })
+        .catch(err => {
+            console.log(err);
         })
     }
 };
@@ -138,6 +141,18 @@ function setEntitiesMap() {
         y: 1500
     });
 };
+
+function setPlayerLastLocation() {
+    httpService.get(getLastRollUrll).then(value => {
+        const lastRollValue = value.data.dice_result;
+        if (lastRollValue) {
+            player.entity.setLocation(entities[lastRollValue].getLocation());
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
 
 function setWindowCtx(_ctx) {
     windowCtx = _ctx;

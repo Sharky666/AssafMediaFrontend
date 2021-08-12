@@ -61,6 +61,10 @@ class Entity {
         return this.location;
     }
 
+    setLocation(_location) {
+        return this.location = _location;
+    }
+
     getSize() {
         return this.size;
     }

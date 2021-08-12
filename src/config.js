@@ -1,5 +1,5 @@
 const Config = {
-    serverAdress: 'http://localhost:2000',
+    serverAdress: '',
 }
 
 export default Config;
