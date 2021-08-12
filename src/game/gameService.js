@@ -1,3 +1,4 @@
+import config from '../config';
 import httpService from '../services/httpService';
 import Bottle from './enitities/items/botte';
 import Dragon from './enitities/items/dragon';
@@ -10,9 +11,8 @@ import TressureIsland from './enitities/items/tressureIsland';
 import Wave from './enitities/items/wave';
 import Player from './player';
 
-const domain = 'http://localhost:2000';
-const rollDiceUrl = `${domain}/game/roll`;
-const getLastRollUrll = `${domain}/game/lastRoll`;
+const rollDiceUrl = `${config.serverAdress}/game/roll`;
+const getLastRollUrll = `${config.serverAdress}/game/lastRoll`;
 
 const entities = [];
 const entitiesMap = {
@@ -49,7 +49,7 @@ const GameService = {
     rollDice: function(){
         httpService.get(rollDiceUrl).then(diceRoll => {
             console.log(diceRoll);
-            player.entity.setDestinationEntity(entitiesMap[diceRoll.number]);
+            player.entity.setDestinationEntity(entitiesMap[diceRoll]);
         })
     }
 };

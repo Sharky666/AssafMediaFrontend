@@ -14,7 +14,7 @@ const sound = new Howl({
   Howler.volume(0.3);
 
     return (
-        <div className="container">
+        <div className="game-container">
             <CanvasContainer/>
             <GameSidePanel/>
         </div>
